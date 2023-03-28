@@ -4,6 +4,14 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - "bin/**/*"
+    - "config/**/*"
+    - "Gemfile"
+    - "db/schema.rb"
+    - "app/mailers/application_mailer.rb"
+    - "config.ru"
+    - "db/migrate/**/*"
+    - "test/**/*"
 
   DisplayCopNames: true
 
