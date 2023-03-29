@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <img src="https://icon-library.com/images/icon-locker/icon-locker-11.jpg" alt="logo" width="250"  height="auto" />
+  <img src="https://icon-library.com/images/icon-blog/icon-blog-0.jpg" alt="logo" width="250"  height="auto" />
   <br/>
 
 </div>
