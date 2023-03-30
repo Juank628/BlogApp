@@ -8,7 +8,7 @@ class Post < ApplicationRecord
     user.update(posts_counter: value)
   end
 
-  def self.get_recent_comments(pos_id)
+  def self.recent_comments
     comments.order(created_at: :desc).limit(5)
   end
 end
