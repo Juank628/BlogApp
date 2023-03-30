@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :posts, foreign_key: 'author_id'
   has_many :likes
 
-  def self.get_recent_posts(user_id)
-    Post.where(author_id: user_id).order(created_at: :desc).limit(3)
+  def get_recent_posts
+    posts.order(created_at: :desc).limit(3)
   end
 end

@@ -9,6 +9,6 @@ class Post < ApplicationRecord
   end
 
   def self.get_recent_comments(pos_id)
-    Comment.where(post_id: pos_id).order(created_at: :desc).limit(5)
+    comments.order(created_at: :desc).limit(5)
   end
 end
