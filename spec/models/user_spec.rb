@@ -31,13 +31,13 @@ RSpec.describe User, type: :model do
   it 'recent_posts method should return 3 last posts' do
     user = User.create(name: 'Juan', photo: 'soon...', bio: 'Teacher from Poland.', posts_counter: 0)
     Post.create(author: user, title: 'Hello', text: 'This is my first post', comments_counter: 0,
-       likes_counter: 0)
+                likes_counter: 0)
     Post.create(author: user, title: 'Hello', text: 'This is my first post', comments_counter: 0,
-       likes_counter: 0)
+                likes_counter: 0)
     Post.create(author: user, title: 'Hello', text: 'This is my first post', comments_counter: 0,
-       likes_counter: 0)
+                likes_counter: 0)
     Post.create(author: user, title: 'Hello', text: 'This is my first post', comments_counter: 0,
-              likes_counter: 0)
+                likes_counter: 0)
 
     expect(user.recent_posts.length).to eql 3
   end
