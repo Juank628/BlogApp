@@ -37,14 +37,14 @@ RSpec.describe Post, type: :model do
   end
 
   it 'recent_comments should return 5 elemets' do
-    user = User.create(name: 'Juan', photo: 'soon...', bio: 'Teacher from Poland.', posts_counter: 0)
-    Comment.create(user: user, post: subject)
-    Comment.create(user: user, post: subject)
-    Comment.create(user: user, post: subject)
-    Comment.create(user: user, post: subject)
-    Comment.create(user: user, post: subject)
-    Comment.create(user: user, post: subject)
-    Comment.create(user: user, post: subject)
+    user1 = User.create(name: 'Juan', photo: 'soon...', bio: 'Teacher from Poland.', posts_counter: 0)
+    Comment.create(user: user1, post: subject)
+    Comment.create(user: user1, post: subject)
+    Comment.create(user: user1, post: subject)
+    Comment.create(user: user1, post: subject)
+    Comment.create(user: user1, post: subject)
+    Comment.create(user: user1, post: subject)
+    Comment.create(user: user1, post: subject)
 
     expect(subject.recent_comments.length).to eql 5
   end
