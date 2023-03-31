@@ -11,7 +11,6 @@ RSpec.describe Like, type: :model do
   end
 
   it 'likes_counter should be equal to 5' do
-    second_user = User.new(name: 'Juan', photo: 'soon...', bio: 'Teacher from Mexico.', posts_counter: 0)
     Like.create(post: subject)
     Like.create(post: subject)
     Like.create(post: subject)
