@@ -45,7 +45,7 @@ RSpec.describe Post, type: :model do
     Comment.create(user: user, post: subject)
     Comment.create(user: user, post: subject)
     Comment.create(user: user, post: subject)
-    
+
     expect(subject.recent_comments.length).to eql 5
   end
 end
