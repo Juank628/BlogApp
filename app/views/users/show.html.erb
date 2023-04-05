@@ -1,1 +1,24 @@
-<h1>User show</h1>
+<section class="users_show_container">
+    <div>
+        <li class="user_card">
+        <div>
+            <img src="https://randomuser.me/api/portraits/men/19.jpg" />
+        </div>
+            
+        <p class="user_card_name" ><%= @user.name %></p>
+        <p class="user_card_posts" >Number of posts: <span><%= @user.posts_counter %></span></p>
+        </li>
+    </div>
+    <div class="users_show_bio">
+        <p>Bio</p>
+        <p><%= @user.bio %></p>
+    </div>
+    <ul>
+      <% @posts_list.each_with_index do |post, index| %>
+        <li class="users_show_post">
+          <p>Post #<%= index + 1 %></p>
+          <p><%= post.text %></p>
+        </li>
+      <% end %>
+    </ul>
+</section>
