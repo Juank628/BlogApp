@@ -12,6 +12,11 @@ ul {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 /*user card*/
 .user_card {
     display: flex;

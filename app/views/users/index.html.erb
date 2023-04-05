@@ -1,14 +1,14 @@
 <section class="users_index_container">
 <ul>
   <% @users_list.each do |user| %>
-    <li class="user_card">
-     <div>
-       <img src="https://randomuser.me/api/portraits/men/19.jpg" />
-     </div>
-     
-       <p class="user_card_name" ><%= user.name %></p>
-       <p class="user_card_posts" >Number of posts: <span><%= user.posts_counter || 0 %></span></p>
-     
+    <li>
+      <a href="/users/<%=user.id%>" class="user_card">
+        <div>
+          <img src="https://randomuser.me/api/portraits/men/19.jpg" />
+        </div>
+        <p class="user_card_name" ><%= user.name %></p>
+        <p class="user_card_posts" >Number of posts: <span><%= user.posts_counter || 0 %></span></p>
+      </a>
     </li>
   <% end %>
 </ul>
