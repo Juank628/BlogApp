@@ -75,3 +75,7 @@ a {
     border: 1px solid gray;
     padding: 25px;
 }
+
+.posts_index_commentator {
+    font-weight: 600;
+}

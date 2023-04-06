@@ -3,7 +3,7 @@
   <div>
     <li class="user_card">
     <div>
-        <img src="<%= @user.photo %>.jpg" />
+        <img src="<%= @user.photo %>" />
     </div>
         
     <p class="user_card_name" ><%= @user.name %></p>
@@ -20,7 +20,9 @@
         </div>
         <ul class="posts_index_comments">
           <% post.recent_comments.each do |post| %>
-            <li> <%= post.text %> </li>
+            <li>
+              <p><span class="posts_index_commentator"><%= post.user.name %>:</span> <%= post.text %></p>
+            </li>
           <% end %>
         </ul>
       </li>
