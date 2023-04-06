@@ -17,7 +17,7 @@
       <% @posts_list.each_with_index do |post, index| %>
         <li class="users_show_post">
           <p>Post #<%= index + 1 %></p>
-          <p><%= post.text %></p>
+          <p class="post_short"><%= post.text %></p>
         </li>
       <% end %>
     </ul>
