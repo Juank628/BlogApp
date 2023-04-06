@@ -1,1 +1,19 @@
-<h1>Post show</h1>
+<section class="posts_show_container">
+
+        <div class="posts_show_post">
+          <p>Post #<%= 1 %> by <%= @post.author.name %></p>
+          <p><%= @post.text %></p>
+        </div>
+        <ul class="posts_show_comments">
+          <% @post.recent_comments.each do |post| %>
+            <li>
+              <p>
+                <span class="posts_show_commentator"><%= post.user.name %>:</span>
+                <%= post.text %>
+              </p>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+
+</section>

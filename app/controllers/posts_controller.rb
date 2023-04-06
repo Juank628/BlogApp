@@ -5,5 +5,9 @@ class PostsController < ApplicationController
     @posts_list = @user.recent_posts
   end
 
-  def show; end
+  def show
+    user_id = request.params['user_id'].to_i
+    post_id = request.params['id'].to_i
+    @post = Post.find(post_id)
+  end
 end
