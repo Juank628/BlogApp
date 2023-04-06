@@ -1,1 +1,30 @@
-<h1>Posts index</h1>
+<section class="posts_index_container">
+
+  <div>
+    <li class="user_card">
+    <div>
+        <img src="<%= @user.photo %>.jpg" />
+    </div>
+        
+    <p class="user_card_name" ><%= @user.name %></p>
+    <p class="user_card_posts" >Number of posts: <span><%= @user.posts_counter %></span></p>
+    </li>
+  </div>
+
+  <ul>
+    <% @posts_list.each_with_index do |post, index| %>
+      <li>
+        <div class="posts_index_post">
+          <p>Post #<%= index + 1 %></p>
+          <p><%= post.text %></p>
+        </div>
+        <ul class="posts_index_comments">
+          <% post.recent_comments.each do |post| %>
+            <li> <%= post.text %> </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+
+</section>

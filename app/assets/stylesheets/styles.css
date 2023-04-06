@@ -58,3 +58,20 @@ a {
     border: 1px solid gray;
     padding: 25px;
 }
+
+/************Posts index***********/
+
+.posts_index_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.posts_index_post {
+    border: 1px solid gray;
+    padding: 25px;
+}
+
+.posts_index_comments {
+    border: 1px solid gray;
+    padding: 25px;
+}
