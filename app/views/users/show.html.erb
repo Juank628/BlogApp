@@ -18,6 +18,8 @@
         <li class="users_show_post">
           <p>Post #<%= index + 1 %></p>
           <p class="post_short"><%= post.text %></p>
+          <p>Comments: <%= post.comments_counter %></p>
+          <p>Likes: <%= post.likes_counter %></p>
         </li>
       <% end %>
     </ul>

@@ -17,6 +17,8 @@
         <div class="posts_index_post">
           <p>Post #<%= index + 1 %></p>
           <p class="post_short"><%= post.text %></p>
+          <p>Comments: <%= post.comments_counter %></p>
+          <p>Likes: <%= post.likes_counter %></p>
           <a href=<%= "/users/#{@user.id}/posts/#{post.id}" %>>read more</a>
         </div>
         <ul class="posts_index_comments">
