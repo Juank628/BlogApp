@@ -5,7 +5,7 @@
           <p><%= @post.text %></p>
         </div>
         <ul class="posts_show_comments">
-          <% @post.recent_comments.each do |post| %>
+          <% @post.comments.all.each do |post| %>
             <li>
               <p>
                 <span class="posts_show_commentator"><%= post.user.name %>:</span>
