@@ -9,4 +9,18 @@ class PostsController < ApplicationController
     post_id = request.params['id'].to_i
     @post = Post.find(post_id)
   end
+
+  def new; end
+
+  def create
+    data = params.require('data')
+
+    newPost = Post.new(author: current_user, title: data['title'], text: data['text'], comments_counter: 0, likes_counter: 0)
+    if newPost.save
+      redirect_to '/users'
+    else
+      redirect_to '/posts/new'
+      flash[:error] = "Error. Please try again"
+    end
+  end
 end
