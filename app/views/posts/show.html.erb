@@ -5,15 +5,15 @@
           <p><%= @post.text %></p>
         </div>
         <ul class="posts_show_comments">
-          <% @post.comments.all.each do |post| %>
+          <% @post.comments.all.each do |comment| %>
             <li>
               <p>
-                <span class="posts_show_commentator"><%= post.user.name %>:</span>
-                <%= post.text %>
+                <span class="posts_show_commentator"><%= comment.user.name %>:</span>
+                <%= comment.text %>
               </p>
             </li>
           <% end %>
         </ul>
-      </li>
+        <a href=<%= "/users/#{@post.author.id}/posts/#{@post.id}/comments/new" %>>Create comment</a>
 
 </section>
