@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def show
     post_id = request.params['id'].to_i
     @post = Post.find(post_id)
+    @current_user = current_user
   end
 
   def new; end
