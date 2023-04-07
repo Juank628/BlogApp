@@ -15,12 +15,13 @@ class PostsController < ApplicationController
   def create
     data = params.require('data')
 
-    newPost = Post.new(author: current_user, title: data['title'], text: data['text'], comments_counter: 0, likes_counter: 0)
-    if newPost.save
+    new_post = Post.new(author: current_user, title: data['title'], text: data['text'], comments_counter: 0,
+                        likes_counter: 0)
+    if new_post.save
       redirect_to '/users'
     else
       redirect_to '/posts/new'
-      flash[:error] = "Error. Please try again"
+      flash[:error] = 'Error. Please try again'
     end
   end
 end
