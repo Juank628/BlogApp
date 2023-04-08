@@ -5,15 +5,24 @@
           <p><%= @post.text %></p>
         </div>
         <ul class="posts_show_comments">
-          <% @post.comments.all.each do |post| %>
+          <% @post.comments.all.each do |comment| %>
             <li>
               <p>
-                <span class="posts_show_commentator"><%= post.user.name %>:</span>
-                <%= post.text %>
+                <span class="posts_show_commentator"><%= comment.user.name %>:</span>
+                <%= comment.text %>
               </p>
             </li>
           <% end %>
         </ul>
-      </li>
+        <a href=<%= "/posts/#{@post.id}/comments/new" %>>Create comment</a>
+
+        <%= form_with model: Like, url: "/users/#{@current_user.id}/posts/#{@post.id}/likes/create", method: :post, local: true, scope: :data do |f| %>
+          <%= f.submit 'Add Like' %>
+          <% flash.each do |type, msg| %>
+            <div>
+              <%= msg %>
+            </div>
+          <% end %>
+        <% end %>
 
 </section>

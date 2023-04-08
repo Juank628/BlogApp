@@ -1,0 +1,19 @@
+<h1>Create new post</h1>
+
+<%= form_with model: Post, url: '/posts/create', method: :post, local: true, scope: :data do |f| %>
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </div>
+  <%= f.submit "Add Post" %>
+<% end %>
+
+<% flash.each do |type, error| %>
+  <div>
+    <%= error %>
+  </div>
+<% end %>

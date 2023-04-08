@@ -1,0 +1,6 @@
+<h1>Create new comment</h1>
+
+<%= form_with model: Comment, url: "/posts/#{@post_id}/comments", method: :post, local: true, scope: :data do |f| %>
+  <%= f.text_area :text %><br>
+  <%= f.submit 'Add comment' %>
+<% end %>
