@@ -14,7 +14,7 @@
             </li>
           <% end %>
         </ul>
-        <a href=<%= "/users/#{@post.author.id}/posts/#{@post.id}/comments/new" %>>Create comment</a>
+        <a href=<%= "/posts/#{@post.id}/comments/new" %>>Create comment</a>
 
         <%= form_with model: Like, url: "/users/#{@current_user.id}/posts/#{@post.id}/likes/create", method: :post, local: true, scope: :data do |f| %>
           <%= f.submit 'Add Like' %>

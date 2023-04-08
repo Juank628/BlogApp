@@ -11,18 +11,22 @@ class PostsController < ApplicationController
     @current_user = current_user
   end
 
-  def new; end
+  def new
+    @post = Post.new
+  end
 
   def create
-    data = params.require('data')
+    new_post = current_user.posts.new(post_params)
 
-    new_post = Post.new(author: current_user, title: data['title'], text: data['text'], comments_counter: 0,
-                        likes_counter: 0)
     if new_post.save
-      redirect_to '/users'
+      redirect_to "/users/#{current_user.id}/posts"
     else
       redirect_to '/posts/new'
       flash[:error] = 'Error. Please try again'
     end
+  end
+
+  def post_params
+    params.require(:data).permit(:title, :text)
   end
 end
