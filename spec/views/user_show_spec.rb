@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'User show', type: :feature do
   user_path = '/users/1'
-  
+
   scenario 'show user picture' do
     visit user_path
     expect(page).to have_selector('img[src="https://randomuser.me/api/portraits/men/1.jpg"]')
