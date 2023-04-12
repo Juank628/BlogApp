@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User show', type: :feature do
-  user_post_path = "/users/1/posts/1"
+  user_post_path = '/users/1/posts/1'
 
   scenario "show post's title" do
     visit user_post_path
