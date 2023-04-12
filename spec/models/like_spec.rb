@@ -7,7 +7,7 @@ RSpec.describe Like, type: :model do
   end
 
   it 'likes counter should be 5' do
-    expect(subject.likes_counter).to eq('5')
+    expect(subject.likes_counter).to eq(5)
   end
 
   it 'likes_counter should be equal to 5' do
@@ -16,6 +16,6 @@ RSpec.describe Like, type: :model do
     Like.create(post: subject)
     Like.create(post: subject)
     Like.create(post: subject)
-    expect(subject.likes_counter).to eql '5'
+    expect(subject.likes_counter).to eql 5
   end
 end

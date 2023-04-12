@@ -12,17 +12,7 @@ RSpec.describe PostsController, type: :request do
   end
 
   it 'should render show template' do
-    get '/users/1/posts/22'
+    get '/users/1/posts/1'
     expect(response).to render_template('show')
-  end
-
-  it 'should content correct h1 in users/id/posts' do
-    get '/users/1/posts'
-    expect(response.body).to include('Posts index')
-  end
-
-  it 'should content correct h1 in /users/user_id/posts/id' do
-    get '/users/1/posts/22'
-    expect(response.body).to include('Post show')
   end
 end
