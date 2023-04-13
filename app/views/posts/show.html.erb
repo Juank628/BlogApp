@@ -1,13 +1,15 @@
 <section class="posts_show_container">
 
         <div class="posts_show_post">
-          <p>Post #<%= 1 %> by <%= @post.author.name %></p>
+          <h1>Post: <%= @post.title %> by <%= @post.author.name %></h1>
           <p><%= @post.text %></p>
+          <p>Comments: <%= @post.comments_counter %></p>
+          <p>Likes: <%= @post.likes_counter %></p>
         </div>
         <ul class="posts_show_comments">
           <% @post.comments.all.each do |comment| %>
             <li>
-              <p>
+              <p class="comment-identifier">
                 <span class="posts_show_commentator"><%= comment.user.name %>:</span>
                 <%= comment.text %>
               </p>

@@ -2,7 +2,7 @@
     <div>
         <li class="user_card">
         <div>
-            <img src="https://randomuser.me/api/portraits/men/<%= @user.id %>.jpg" />
+            <img class="img_identifier" src="https://randomuser.me/api/portraits/men/<%= @user.id %>.jpg" />
         </div>
             
         <p class="user_card_name" ><%= @user.name %></p>
@@ -17,10 +17,12 @@
     <ul>
       <% @posts_list.each_with_index do |post, index| %>
         <li class="users_show_post">
-          <p>Post #<%= index + 1 %></p>
-          <p class="post_short"><%= post.text %></p>
-          <p>Comments: <%= post.comments_counter %></p>
-          <p>Likes: <%= post.likes_counter %></p>
+          <a href=<%="/users/#{@user.id}/posts/#{post.id}"%>>
+            <p>Post #<%= index + 1 %></p>
+            <p class="post_short"><%= post.text %></p>
+            <p>Comments: <%= post.comments_counter %></p>
+            <p>Likes: <%= post.likes_counter %></p>
+          </a>
         </li>
       <% end %>
     </ul>
